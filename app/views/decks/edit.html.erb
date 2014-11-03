@@ -1,0 +1,8 @@
+<h1>Editing the <%= @deck.name %> deck</h1>
+<div class="actions"><%= link_to "<< Back to Decks", decks_path %></div>
+<div class="container">
+<%= form_for @deck do |form| %>
+	<%= render form %>
+	<%= form.submit "Update Deck" %>
+<% end %>
+</div>

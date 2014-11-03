@@ -1,0 +1,11 @@
+<h1>Viewing Decks</h1>
+<div class="actions"><%= link_to "Create a new deck", new_deck_path %></div>
+<div class="container">
+<% @decks.each do |deck| %>
+	<div>
+		<%= link_to deck.name, deck %> &mdash; 
+		<%= link_to "Edit", edit_deck_path(deck) %> 
+		<%= link_to "Destroy", deck, data: { confirm: "Delete the #{deck.name} deck?" }, method: :delete %>
+	</div>
+<% end %>
+</div>

@@ -1,0 +1,16 @@
+<h1><%= @deck.name %></h1>
+<div class="actions">
+	<%= link_to "<< Back to all decks", decks_path %> |
+	<%= link_to "Create a new card", new_deck_card_path(@deck) %>
+</div>
+<div class="container">
+<ul>
+	<% @cards.each do |card| %>
+		<li>
+		<%= link_to card.front, [@deck, card] %> &mdash; 
+		<%= link_to "Edit", edit_deck_card_path(@deck, card) %>
+		<%= link_to "Delete", [@deck, card], data: { confirm: "Are you sure you want to delete this card?" }, method: :delete  %>
+		</li>
+	<% end %>
+</ul>
+</div>
